@@ -36,7 +36,10 @@ Without `GEMINI_API_KEY`, the service still runs using a deterministic heuristic
    - **Runtime**: Python 3
    - **Build**: `pip install -r requirements.txt`
    - **Start**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-   - **Env**: `GEMINI_API_KEY=<your key>`, `GEMINI_MODEL=gemini-2.0-flash`
+   - **Env** (required):
+     - `PYTHON_VERSION` = `3.11.9`  ← important (do not use 3.14)
+     - `GEMINI_API_KEY` = your key
+     - `GEMINI_MODEL` = `gemini-2.0-flash`
 5. After deploy, open `https://YOUR-SERVICE.onrender.com/health` → `{"status":"ok"}`
 6. Submit that base URL in the fest portal (Participant Guide).
 
