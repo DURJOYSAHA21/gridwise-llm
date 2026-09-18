@@ -24,6 +24,17 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+def root() -> dict[str, str]:
+    return {
+        "service": "GridWise LLM Energy Optimizer",
+        "status": "ok",
+        "health": "/health",
+        "optimize": "POST /optimize-energy",
+        "docs": "/docs",
+    }
+
+
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
